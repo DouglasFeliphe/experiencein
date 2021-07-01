@@ -9,8 +9,6 @@ class Perfil(models.Model):
 
     def convidar(self, perfil_convidado):
         Convite(solicitante=self, convidado=perfil_convidado).save()
-       
-        return redirect('index')     
           
 class Convite(models.Model):
     solicitante = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='convites_feitos')    
