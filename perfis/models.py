@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User 
 
 # Create your models here.
 class Perfil(models.Model):  
@@ -8,6 +9,12 @@ class Perfil(models.Model):
     nome_empresa = models.CharField(max_length=255, null=False)
 
     contatos = models.ManyToManyField('self')
+
+    usuario = models.OneToOneField(User,on_delete=models.CASCADE, related_name='perfil')
+
+    @property
+    def email(self):
+        return self.usuario.email
 
     def convidar(self, perfil_convidado):
         Convite(solicitante=self, convidado=perfil_convidado).save()
