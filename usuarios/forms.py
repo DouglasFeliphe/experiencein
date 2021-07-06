@@ -1,14 +1,13 @@
 from django import forms
-from django.forms.fields import TimeField
 from django.contrib.auth.models import User
 
 
 class RegistrarUsuarioForm(forms.Form):
-    nome= forms.CharField(required=True)
-    email = forms.CharField(required=True)
+    nome = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
     senha = forms.CharField(required=True)
     telefone = forms.CharField(required=True)
-    nome_da_empresa = forms.CharField(required=True)  
+    nome_empresa = forms.CharField(required=True)  
 
 
     def is_valid(self):

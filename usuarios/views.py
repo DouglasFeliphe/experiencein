@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render, resolve_url
+from django.shortcuts import redirect, render
 from django.views.generic.base import View
 from django.contrib.auth.models import User
 from perfis.models import Perfil
@@ -16,10 +16,10 @@ class RegistrarUsuarioView(View):
         form = RegistrarUsuarioForm(request.POST)
 
          #verifica se eh valido
-        if form.is_valid:
+        if form.is_valid():
             dados_form = form.data
 
-            usuario = User.objects.create_user(dados_form['nome'],dados_form['email'],dados_form['senha'])
+            usuario = User.objects.create_user(dados_form['nome'], dados_form['email'], dados_form['senha'])
 
             #cria o perfil
             perfil = Perfil.objects.create(
@@ -37,4 +37,4 @@ class RegistrarUsuarioView(View):
 
         #so chega aqui se nao for valido
         #vamos devolver o form para mostrar o formulario preenchido         
-        return render(request, self.template_name, { 'form':form })
+        return render(request, self.template_name, { 'form': form })
