@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12">
         <h2 style="margin-top:0">{{perfil.nome}}</h2>
         <address>
@@ -17,5 +17,27 @@
           <a href="{% url 'convidar' perfil.id %}">convidar</a>
         {% endif %}  
     </div>
+</div> -->
+<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+  <!-- <div class="card-header">{{perfil.nome}}</div> -->
+  <div class="card-body">
+    <h4 class="card-title">{{perfil.nome}}</h4>
+    <p class="card-text">
+    <address>
+      <strong>{{perfil.nome_empresa}}</strong><br>
+      <abbr title="Telefone">Tel:</abbr> {{perfil.telefone}}<br>
+      <a href="mailto:{{perfil.email}}">{{perfil.email}}</a>
+    </address>
+    {% if ja_e_contato %}
+    <div class="well well-sm">Vocês estão conectados!</div>
+    {% else %}
+    <button type="button" class="btn btn-primary">
+      <a href="{% url 'convidar' perfil.id %}">
+        convidar
+      </a>
+    </button>
+    {% endif %}
+    </p>
+  </div>
 </div>
 {% endblock %}
