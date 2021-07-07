@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">ExperienceIn</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
@@ -9,12 +9,12 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'index' %}">{{perfil_logado.nome}}
+                    <a class="nav-link btn btn-secondary" href="{% url 'index' %}">{{perfil_logado.nome}}
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout/">Logout</a>
+                    <a class="nav-link btn btn-primary" href="/logout/">Logout</a>
                 </li>
             </ul>
         </div>
