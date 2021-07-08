@@ -4,25 +4,24 @@
 
 <form class="form-signin" role="form" action="{% url 'login' %}" method="post">
     {% csrf_token %}
-
     <h2 class="form-signin-heading">Login</h2>
 
-    <input type="text" id="id_username" name="username" class="form-control" placeholder="Nome" required autofocus>
+    <input type="text" id="id_username" name="username" class="form-control mt-4" placeholder="Nome" required autofocus>
 
-    <input type="password" id="id_password" name="password" class="form-control" placeholder="Senha" required>
+    <input type="password" id="id_password" name="password" class="form-control mt-4" placeholder="Senha" required>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Login</button>
+    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit" value="Login">Login</button>
 
     <input type="hidden" name="next" value="{{ next }}" />
 
     {% if form.errors %}
-    <div class="alert alert-danger">
+    <div class="alert alert-danger mt-4">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         Por favor, verifique o Email e/ou Senha informados
     </div>
     {% endif %}
 
-    <a href="{% url 'registrar' %}">registre-se</a>
+    <a class="btn" href="{% url 'registrar' %}">registre-se</a>
 </form>
 
 {% endblock %}

@@ -9,12 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link btn btn-secondary" href="{% url 'index' %}">{{perfil_logado.nome}}
+                    <a class="nav-link text-light" href="{% url 'index' %}">
+                        {{perfil_logado.nome}}
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-primary" href="/logout/">Logout</a>
+                    <a class="nav-link" href="/logout/">Logout</a>
                 </li>
             </ul>
         </div>
