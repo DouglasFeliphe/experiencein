@@ -25,7 +25,9 @@ SECRET_KEY = 'e3m$xln6$2q2!l*u$k1u*9+*i#x%cdq%gi3sefue^%l4xlsg-c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://douglasfeliphe.pythonanywhere.com/'
+]
 
 
 # Application definition
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'experiencein.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'experiencein',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost', 
+        'PORT': '3306'
     }
 }
 
